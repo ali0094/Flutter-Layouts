@@ -15,11 +15,28 @@ class MyApp extends StatelessWidget {
       child: Row(
         children: [
           Expanded(child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  'Oeschinen Lake Campground',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Text(
+                'Kandersteg, Switzerland',
+                style: TextStyle(
+                  color: Colors.grey[500],
+                ),
+              ),
+            ],
 
           ))
         ],
       ),
-    )
+    );
 
     return MaterialApp(
         title: 'Flutter Layout',
