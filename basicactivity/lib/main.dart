@@ -10,6 +10,42 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
+    Column _buildButtonColumn(Color color, IconData icon, String label) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, color: color),
+          Container(
+            margin: const EdgeInsets.only(top: 8),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _buildButtonColumn(color, Icons.call, 'CALL'),
+          _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+          _buildButtonColumn(color, Icons.share, 'SHARE'),
+        ],
+      ),
+    );
+
     Widget titleSection = Container(
       padding: EdgeInsets.all(32),
       child: Row(
@@ -32,11 +68,17 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ],
-
-          ))
+          ),
+          ),
+          Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          Text('41'),
         ],
       ),
     );
+
 
     return MaterialApp(
         title: 'Flutter Layout',
@@ -56,14 +98,11 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Layout learning'),
           ),
-          body: Center(
-            child: Text(
-              'Hi there!',
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 18,
-              ),
-            ),
+          body:Column(
+            children: [
+              titleSection,
+              buttonSection,
+            ],
           ),
         ));
   }
