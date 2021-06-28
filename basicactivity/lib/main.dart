@@ -32,11 +32,11 @@ class MyApp extends StatelessWidget {
         children: [
           Icon(icon, color: color),
           Container(
-            margin: const EdgeInsets.only(top: 8),
+            margin: const EdgeInsets.only(top: 12),
             child: Text(
               label,
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: FontWeight.w400,
                 color: color,
               ),
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
           Expanded(child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: const EdgeInsets.only(bottom: 12),
                 child: const Text(
                   'Oeschinen Lake Campground',
                   style: TextStyle(
