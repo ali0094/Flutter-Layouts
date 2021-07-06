@@ -1,3 +1,4 @@
+import 'package:basicactivity/screens/home/homepage.dart';
 import 'package:flutter/material.dart';
 
 //RUN|DEBUG
@@ -6,17 +7,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp() : super();
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Material(
-      child: Center(
-        child: Container(
-          child: Text('test'),
-        ),
-      ),
-    ));
+    return MaterialApp(home: HomePage());
   }
 }
