@@ -1,22 +1,26 @@
+import 'package:basicactivity/screens/home/homepage.dart';
+import 'package:basicactivity/screens/login/login.dart';
+import 'package:basicactivity/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-//RUN|DEBUG
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp() : super();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Material(
-      child: Center(
-        child: Container(
-          child: Text('test'),
-        ),
-      ),
-    ));
+      theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          fontFamily: GoogleFonts.lato().fontFamily,
+          primaryTextTheme: GoogleFonts.latoTextTheme()),
+      initialRoute: MyRoutes.loginRoute,
+      routes: {
+        MyRoutes.loginRoute: (context) => Login(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+      },
+    );
   }
 }
