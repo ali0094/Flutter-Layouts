@@ -1,4 +1,5 @@
 import 'package:basicactivity/main.dart';
+import 'package:basicactivity/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Catalog App'),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: Container(
         child: Center(
           child: Text('Helo there'),
