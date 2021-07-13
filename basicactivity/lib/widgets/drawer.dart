@@ -1,3 +1,4 @@
+import 'package:basicactivity/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class MyDrawer extends StatelessWidget {
     const imageUrl = "https://avatars.githubusercontent.com/u/12684744?v=4";
     return Drawer(
       child: Container(
-        color: Colors.blueGrey,
+        color: Colors.teal,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -68,6 +69,22 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Contact Us",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              },
+              leading: Icon(
+                CupertinoIcons.arrow_left_circle,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Log Out",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,

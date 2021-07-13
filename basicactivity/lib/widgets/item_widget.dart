@@ -22,9 +22,9 @@ class ItemWidget extends StatelessWidget {
         title: Text(item.name),
         subtitle: Text(item.desc),
         trailing: Text(
-          "\$ ${item.name.toString()}",
+          "\$ ${item.price.toString()}",
           style: TextStyle(
-            color: Colors.blueGrey,
+            color: Colors.teal,
             fontWeight: FontWeight.bold,
           ),
         ),
