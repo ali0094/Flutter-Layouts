@@ -28,8 +28,8 @@ class ProductDetail extends StatelessWidget {
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(StadiumBorder()),
                 ),
-                child: "Buy".text.xl.make(),
-              ).wh(100, 45)
+                child: "Add to cart".text.xl.make(),
+              ).wh(120, 45)
             ],
           ).p32(),
         ),

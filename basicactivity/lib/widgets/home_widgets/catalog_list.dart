@@ -62,8 +62,8 @@ class CataLogItem extends StatelessWidget {
                         StadiumBorder(),
                       ),
                     ),
-                    child: "Buy".text.semiBold.sm.make(),
-                  ).wh(60, 28)
+                    child: "Add to cart".text.semiBold.sm.make(),
+                  ),
                 ],
               ).pOnly(right: 8)
             ],
