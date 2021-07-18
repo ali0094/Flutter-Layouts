@@ -1,9 +1,12 @@
 import 'package:basicactivity/main.dart';
 import 'package:basicactivity/models/catalog.dart';
-import 'package:basicactivity/widgets/drawer.dart';
-import 'package:basicactivity/widgets/item_widget.dart';
+import 'package:basicactivity/widgets/home_widgets/catalog_header.dart';
+import 'package:basicactivity/widgets/home_widgets/catalog_list.dart';
+import 'package:basicactivity/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'dart:convert';
 
 void main() {
@@ -16,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isLoading = true;
   @override
   void initState() {
     super.initState();
@@ -29,20 +33,31 @@ class _HomePageState extends State<HomePage> {
     CatalogModel.items = List.from(productsItems)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
-    setState(() {});
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Catalog App'),
+      backgroundColor: MyThemes.creamColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.white,
+        child: Icon(CupertinoIcons.cart),
       ),
-      drawer: MyDrawer(),
-      body: ListView.builder(
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, index) => ItemWidget(
-          item: CatalogModel.items[index],
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            children: [
+              CatalogHeader(),
+              !isLoading
+                  ? CataLogList().expand()
+                  : CircularProgressIndicator().centered().expand(),
+            ],
+          ),
         ),
       ),
     );

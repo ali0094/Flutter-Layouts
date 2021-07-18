@@ -101,7 +101,7 @@ class _LoginState extends State<Login> {
                     Material(
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
-                      color: Colors.deepPurple,
+                      color: Colors.teal,
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
