@@ -1,5 +1,6 @@
 import 'package:basicactivity/main.dart';
 import 'package:basicactivity/models/catalog.dart';
+import 'package:basicactivity/utils/routes.dart';
 import 'package:basicactivity/widgets/home_widgets/catalog_header.dart';
 import 'package:basicactivity/widgets/home_widgets/catalog_list.dart';
 import 'package:basicactivity/widgets/themes.dart';
@@ -43,9 +44,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: MyThemes.creamColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.white,
-        child: Icon(CupertinoIcons.cart),
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cartRoute);
+        },
+        child: const Icon(CupertinoIcons.cart),
       ),
       body: SafeArea(
         child: Container(
